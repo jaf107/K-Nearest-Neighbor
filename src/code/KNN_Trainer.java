@@ -9,6 +9,8 @@ public class KNN_Trainer {
 
     ArrayList<Double> valuesOfKNN;
     ArrayList<Boolean> selected;
+    private final int maxGreenIndex = 5;
+    private final int maxSnowIndex = 9;
 
     public KNN_Trainer(BufferedImage test, ArrayList<BufferedImage> dataset) {
         this.test = test;
@@ -52,9 +54,9 @@ public class KNN_Trainer {
         for (int i = 0; i < k; i++) {
             bestIndex = getBestIndex(sample);
 //            System.out.println(bestIndex);
-            if(bestIndex < 5){
+            if(bestIndex < maxGreenIndex){
                 green.add(bestIndex);
-            }else if(bestIndex < 9){
+            }else if(bestIndex < maxSnowIndex){
                 snow.add(bestIndex);
             }
             sample.set(bestIndex-1, -1.0);

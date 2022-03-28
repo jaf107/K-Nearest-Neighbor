@@ -31,7 +31,7 @@ public class MainDriver {
         KNN_Trainer knn_trainer_Tool = new KNN_Trainer(testImage,dataset);
 //        knn_trainer_Tool.showValuesOfKnn();
 
-        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.get_cluster(5) + " \n ");
+        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.get_cluster(3) + " \n ");
 
         knn_trainer_Tool.showValuesOfKnn();
 
