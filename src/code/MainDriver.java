@@ -12,7 +12,7 @@ public class MainDriver {
         int noOfSamples = 8;
 
         ArrayList<BufferedImage> dataset = new ArrayList<>();
-        String samplePath = "src/CSE_504/KNN/dataset/all_sample/s";
+        String samplePath = "src/dataset/all_sample/s";
 
         for (int i = 1; i <= noOfSamples; i++) {
             String tempSamplePath = samplePath + i + ".jpg";
@@ -23,7 +23,7 @@ public class MainDriver {
 //            System.out.println(tempSamplePath);
         }
 
-        String testPath = "src/CSE_504/KNN/dataset/test/test_image_3.jpg";
+        String testPath = "src/dataset/test/test_image_1.jpg";
 //        testPath = "src/CSE_504/KNN/dataset/all_sample/s3.jpg";
         File testFile = new File(testPath);
         BufferedImage testImage = ImageIO.read(testFile);
@@ -31,6 +31,8 @@ public class MainDriver {
         KNN_Trainer knn_trainer_Tool = new KNN_Trainer(testImage,dataset);
         knn_trainer_Tool.showValuesOfKnn();
         System.out.println(knn_trainer_Tool.get_cluster(3));
+        knn_trainer_Tool.showValuesOfKnn();
+
 
     }
 }

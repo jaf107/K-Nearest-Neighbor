@@ -40,7 +40,10 @@ public class KNN_Trainer {
 
     public String get_cluster(int k) {
 //        int k = 3;
-        ArrayList<Double> sample = valuesOfKNN;
+        ArrayList<Double> sample = new ArrayList<>();
+        for (Double d:valuesOfKNN) {
+            sample.add(d);
+        }
 
         ArrayList<Integer> snow = new ArrayList<>();
         ArrayList<Integer> green = new ArrayList<>();
@@ -48,12 +51,13 @@ public class KNN_Trainer {
         int bestIndex;
         for (int i = 0; i < k; i++) {
             bestIndex = getBestIndex(sample);
+//            System.out.println(bestIndex);
             if(bestIndex < 5){
                 green.add(bestIndex);
             }else if(bestIndex < 9){
                 snow.add(bestIndex);
             }
-            sample.remove(bestIndex-1);
+            sample.set(bestIndex-1, -1.0);
         }
         if(snow.size() > green.size()){
             return "Snow";
@@ -63,10 +67,13 @@ public class KNN_Trainer {
     }
 
     private int getBestIndex(ArrayList<Double> sample) {
+//        System.out.println(sample.toString());
         int index = Integer.MAX_VALUE;
         double val = Double.MAX_VALUE;
 //        int i = 0;
         for (int i = 0; i < sample.size(); i++) {
+            if(sample.get(i) == -1.0)
+                continue;
             if(sample.get(i) < val){
                 index = i;
                 val = Math.min(val, sample.get(i));
