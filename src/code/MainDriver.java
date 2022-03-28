@@ -23,7 +23,7 @@ public class MainDriver {
 //            System.out.println(tempSamplePath);
         }
 
-        String testPath = "src/dataset/test/test_image_1.jpg";
+        String testPath = "src/dataset/test/test_image_3.jpg";
 //        testPath = "src/CSE_504/KNN/dataset/all_sample/s3.jpg";
         File testFile = new File(testPath);
         BufferedImage testImage = ImageIO.read(testFile);
