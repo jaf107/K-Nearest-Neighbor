@@ -33,9 +33,9 @@ public class MainDriver {
         knn_trainer_Tool.showValuesOfKnn();
         System.out.println("\nTest data belongs to: " +knn_trainer_Tool.getCluster() + " \n ");
 
-//        knn_trainer_Tool.setK(5);
-//        knn_trainer_Tool.showValuesOfKnn();
-//        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.getCluster() + " \n ");
+        knn_trainer_Tool.setK(5);
+        knn_trainer_Tool.showValuesOfKnn();
+        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.getCluster() + " \n ");
 
     }
 }
