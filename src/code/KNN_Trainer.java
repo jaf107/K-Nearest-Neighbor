@@ -11,13 +11,18 @@ public class KNN_Trainer {
     ArrayList<Boolean> selected;
     private final int maxGreenIndex = 5;
     private final int maxSnowIndex = 9;
+    private int k;
+    private String cluster;
 
-    public KNN_Trainer(BufferedImage test, ArrayList<BufferedImage> dataset) {
+    public KNN_Trainer(BufferedImage test, ArrayList<BufferedImage> dataset, int k) {
         this.test = test;
         this.dataset = dataset;
         this.valuesOfKNN = new ArrayList<>();
         this.selected = new ArrayList<>();
+        this.k = k;
+        this.cluster = "";
         calculateValuesOfKNN();
+
     }
 
     private void calculateValuesOfKNN() {
@@ -40,7 +45,7 @@ public class KNN_Trainer {
                 '}';
     }
 
-    public String get_cluster(int k) {
+    public void analyse_cluster() {
 //        int k = 3;
         ArrayList<Double> sample = new ArrayList<>();
         for (Double d:valuesOfKNN) {
@@ -62,9 +67,11 @@ public class KNN_Trainer {
             sample.set(bestIndex-1, -1.0);
         }
         if(snow.size() > green.size()){
-            return "Snow";
+            this.cluster = "Snow";
+//            return "Snow";
         }else{
-            return "Green";
+            this.cluster = "Green";
+//            return "Green";
         }
     }
 
@@ -85,10 +92,16 @@ public class KNN_Trainer {
         return index+1;
     }
 
+    public String getCluster() {
+        return cluster;
+    }
+
     void showValuesOfKnn(){
         for (int i = 0; i < valuesOfKNN.size(); i++) {
+            if(i == 0)
+                System.out.println("\nGreen Category:");
             if(i == 4)
-                System.out.println();
+                System.out.println("\nSnow Category:");
             System.out.println("Image -> "+ (i+1) + " : " + valuesOfKNN.get(i) +"\t "+ " " + selected.get(i) + " ");
 
         }

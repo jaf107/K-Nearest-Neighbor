@@ -28,12 +28,13 @@ public class MainDriver {
         File testFile = new File(testPath);
         BufferedImage testImage = ImageIO.read(testFile);
 
-        KNN_Trainer knn_trainer_Tool = new KNN_Trainer(testImage,dataset);
+        KNN_Trainer knn_trainer_Tool = new KNN_Trainer(testImage,dataset,3);
 //        knn_trainer_Tool.showValuesOfKnn();
 
-        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.get_cluster(3) + " \n ");
-
+//        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.get_cluster() + " \n ");
+        knn_trainer_Tool.analyse_cluster();
         knn_trainer_Tool.showValuesOfKnn();
+        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.getCluster() + " \n ");
 
 
     }
