@@ -2,6 +2,7 @@ package code;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class KNN_Trainer {
     BufferedImage test;
@@ -22,7 +23,12 @@ public class KNN_Trainer {
         this.k = k;
         this.cluster = "";
         calculateValuesOfKNN();
+        analyse_cluster();
+    }
 
+    void setK(int k){
+        this.k = k;
+        analyse_cluster();
     }
 
     private void calculateValuesOfKNN() {
@@ -48,6 +54,7 @@ public class KNN_Trainer {
     public void analyse_cluster() {
 //        int k = 3;
         ArrayList<Double> sample = new ArrayList<>();
+
         for (Double d:valuesOfKNN) {
             sample.add(d);
         }
