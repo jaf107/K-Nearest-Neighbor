@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class MainDriver {
     public static void main(String[] args) throws IOException {
 
-        int noOfSamples = 8;
+        int noOfSamples = 20;
 
         ArrayList<BufferedImage> dataset = new ArrayList<>();
-        String samplePath = "src/dataset/all_sample/s";
+        String samplePath = "src/dataset/all_sample_2/s";
 
         for (int i = 1; i <= noOfSamples; i++) {
             String tempSamplePath = samplePath + i + ".jpg";
@@ -23,7 +23,7 @@ public class MainDriver {
 //            System.out.println(tempSamplePath);
         }
 
-        String testPath = "src/dataset/test/test_image_1.jpg";
+        String testPath = "src/dataset/test/test_image_4.jpg";
 //        testPath = "src/CSE_504/KNN/dataset/all_sample/s3.jpg";
         File testFile = new File(testPath);
         BufferedImage testImage = ImageIO.read(testFile);

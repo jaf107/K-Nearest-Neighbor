@@ -10,8 +10,8 @@ public class KNN_Trainer {
 
     ArrayList<Double> valuesOfKNN;
     ArrayList<Boolean> selected;
-    private final int maxGreenIndex = 5;
-    private final int maxSnowIndex = 9;
+    private final int maxGreenIndex = 10;
+    private final int maxSnowIndex = 21;
     private int k;
     private String cluster;
 
@@ -107,9 +107,9 @@ public class KNN_Trainer {
         for (int i = 0; i < valuesOfKNN.size(); i++) {
             if(i == 0)
                 System.out.println("\nGreen Category:");
-            if(i == 4)
+            if(i == maxGreenIndex)
                 System.out.println("\nSnow Category:");
-            System.out.println("Image -> "+ (i+1) + " : " + valuesOfKNN.get(i) +"\t "+ " " + selected.get(i) + " ");
+            System.out.println("Image -> "+ (i+1) + " \t: " + selected.get(i) + "\t"+ "\t"+ valuesOfKNN.get(i) +"\t "+ " " );
 
         }
     }
