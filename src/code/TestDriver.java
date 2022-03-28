@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Driver {
+public class TestDriver {
     public static void main(String[] args) throws IOException {
         String trainImagePath = "src/CSE_504/KNN/dataset/all_sample/s2.jpg";
         File trainFile = new File(trainImagePath);

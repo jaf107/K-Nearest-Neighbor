@@ -23,14 +23,16 @@ public class MainDriver {
 //            System.out.println(tempSamplePath);
         }
 
-        String testPath = "src/dataset/test/test_image_3.jpg";
+        String testPath = "src/dataset/test/test_image_1.jpg";
 //        testPath = "src/CSE_504/KNN/dataset/all_sample/s3.jpg";
         File testFile = new File(testPath);
         BufferedImage testImage = ImageIO.read(testFile);
 
         KNN_Trainer knn_trainer_Tool = new KNN_Trainer(testImage,dataset);
-        knn_trainer_Tool.showValuesOfKnn();
-        System.out.println(knn_trainer_Tool.get_cluster(3));
+//        knn_trainer_Tool.showValuesOfKnn();
+
+        System.out.println("\nTest data belongs to: " +knn_trainer_Tool.get_cluster(5) + " \n ");
+
         knn_trainer_Tool.showValuesOfKnn();
 
 

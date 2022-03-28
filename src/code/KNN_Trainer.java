@@ -85,7 +85,10 @@ public class KNN_Trainer {
 
     void showValuesOfKnn(){
         for (int i = 0; i < valuesOfKNN.size(); i++) {
-            System.out.println("Value -> "+ (i+1) + " : " + valuesOfKNN.get(i) + " " + selected.get(i));
+            if(i == 4)
+                System.out.println();
+            System.out.println("Image -> "+ (i+1) + " : " + valuesOfKNN.get(i) +"\t "+ " " + selected.get(i) + " ");
+
         }
     }
 
